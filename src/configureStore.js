@@ -10,12 +10,6 @@ const configureStore = (initialState = {}) => {
     url: 'wss://api.poloniex.com/',
     realm: 'realm1',
   });
-connection.onopen = (session, details) => {
-  console.log('conn opened', session, details);
-};
-connection.onclose = (session, details) => {
-  console.log('conn closed', session, details);
-};
 
   const middleware = [
     reduxAutobahn.middleware(connection)
